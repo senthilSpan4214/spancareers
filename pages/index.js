@@ -4,7 +4,7 @@ import JobOpeningDetailsModal from "@/components/JobOpeningDetailsModal";
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get("https://spancareers.vercel.app/api/careers/getOpening");
+    const response = await axios.get(`${process.env.DOMAIN}/api/careers/getOpening`);
     const openingsData = await response.data;
 
     return {
@@ -43,7 +43,7 @@ const UserPage = ({ Apiopenings }) => {
 
   const apiFetch = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/careers/getOpening");
+      const response = await axios.get(`${process.env.DOMAIN}/api/careers/getOpening`);
       const openingsData = await response.data;
       setOpenings(openingsData);
     } catch (error) {
