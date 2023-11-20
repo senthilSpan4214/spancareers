@@ -89,7 +89,7 @@ const JobOpeningDetailsModal = ({ opening, onClose }) => {
       };
       axios
         .post(
-          "http://localhost:3000/api/candidates/registerCandidate",
+          "https://spancareers.vercel.app/api/candidates/registerCandidate",
           candidateData
         )
         .then(() => {

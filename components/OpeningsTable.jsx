@@ -45,7 +45,7 @@ const OpeningsTable = ({ openings, closeModalFunction }) => {
     createdAt
   ) => {
     const response = await axios.get(
-      `http://localhost:3000/api/candidates/getCandidate/${openingId}`
+      `https://spancareers.vercel.app/api/candidates/getCandidate/${openingId}`
     );
     setCandidatesData(response.data);
     setDepartment(department);
@@ -112,7 +112,7 @@ const OpeningsTable = ({ openings, closeModalFunction }) => {
       }
       if (editingOpening) {
         const response = await axios.put(
-          `http://localhost:3000/api/careers/editOpening/${editingOpening._id}`,
+          `https://spancareers.vercel.app/api/careers/editOpening/${editingOpening._id}`,
           formData
         );
 

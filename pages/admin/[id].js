@@ -105,7 +105,7 @@ const AdminPage = ({ Apiopenings, Apicandidates, Apiadmin }) => {
 
   const apiFetch = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/careers/getOpening");
+      const response = await axios.get("https://spancareers.vercel.app/api/careers/getOpening");
       const openingsData = await response.data;
       setOpenings(openingsData);
     } catch (error) {
