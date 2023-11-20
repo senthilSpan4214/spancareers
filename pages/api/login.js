@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     });
   };
 
-  if (req.method === "POST") {
+  if (req.method === "POST" || "post") {
     await connectDB();
     const { employeeId, email, password } = req.body;
 
