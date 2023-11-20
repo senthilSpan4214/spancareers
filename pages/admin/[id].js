@@ -13,13 +13,13 @@ export async function getServerSideProps(context) {
   try {
     const { id } = context.params;
     
-    const response = await axios.get("http://localhost:3000/api/careers/getOpening");
+    const response = await axios.get("https://spancareers.vercel.app/api/careers/getOpening");
     const openingsData = await response.data;
 
-    const response1 = await axios.get("http://localhost:3000/api/candidates/getCandidates");
+    const response1 = await axios.get("https://spancareers.vercel.app/api/candidates/getCandidates");
     const candidatesData = await response1.data;
 
-    const response2 = await axios.get(`http://localhost:3000/api/me/${id}`);
+    const response2 = await axios.get(`https://spancareers.vercel.app/api/me/${id}`);
     const myData = await response2.data;
 
     return {

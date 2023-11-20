@@ -5,7 +5,7 @@ import { env } from "@/next.config";
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get(`${process.env.DOMAIN_URL}/api/careers/getOpening`);
+    const response = await axios.get(`https://spancareers.vercel.app/api/careers/getOpening`);
     const openingsData = await response.data;
 
     return {
@@ -41,11 +41,11 @@ const UserPage = ({ Apiopenings }) => {
     setSelectedOpening(null);
     setIsModalOpen(false);
   };
-  const domain = process.env.DOMAIN_URL
-  console.log('domain', domain);
+  // const domain = process.env.DOMAIN_URL
+  // console.log('domain', domain);
   const apiFetch = async () => {
     try {
-      const response = await axios.get(`${process.env.DOMAIN_URL}/api/careers/getOpening`);
+      const response = await axios.get(`https://spancareers.vercel.app/api/careers/getOpening`);
       
       const openingsData = await response.data;
       setOpenings(openingsData);
