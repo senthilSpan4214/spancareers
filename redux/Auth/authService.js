@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const register = async (adminData) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/register",
+      "https://spancareers.vercel.app/api/register",
       adminData
     );
     if (response.data) {
@@ -22,7 +22,7 @@ const register = async (adminData) => {
 
 const login = async (adminData) => {
   try {
-    const response = await axios.post("http://localhost:3000/api/login", adminData);
+    const response = await axios.post("https://spancareers.vercel.app/api/login", adminData);
     if (response.data) {
       // localStorage.setItem("admin", JSON.stringify(response.data));
      

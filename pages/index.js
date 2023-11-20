@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import JobOpeningDetailsModal from "@/components/JobOpeningDetailsModal";
+import { env } from "@/next.config";
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get(`${process.env.DOMAIN}/api/careers/getOpening`);
+    const response = await axios.get(`${process.env.DOMAIN_URL}/api/careers/getOpening`);
     const openingsData = await response.data;
 
     return {
@@ -40,10 +41,12 @@ const UserPage = ({ Apiopenings }) => {
     setSelectedOpening(null);
     setIsModalOpen(false);
   };
-
+  const domain = process.env.DOMAIN_URL
+  console.log('domain', domain);
   const apiFetch = async () => {
     try {
-      const response = await axios.get(`${process.env.DOMAIN}/api/careers/getOpening`);
+      const response = await axios.get(`${process.env.DOMAIN_URL}/api/careers/getOpening`);
+      
       const openingsData = await response.data;
       setOpenings(openingsData);
     } catch (error) {

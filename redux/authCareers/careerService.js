@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const addOpening = async (openingData) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/careers/addOpening",
+      "https://spancareers.vercel.app/api/careers/addOpening",
       openingData
     );
 
@@ -25,7 +25,7 @@ const addOpening = async (openingData) => {
 const cancelOpening = async (openingId) => {
   try {
     const response = await axios.delete(
-      `http://localhost:3000/api/careers/cancelOpening/${openingId}`
+      `https://spancareers.vercel.app/api/careers/cancelOpening/${openingId}`
     );
 
     if (response.data) {
@@ -45,7 +45,7 @@ const cancelOpening = async (openingId) => {
 
 const getOpening = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/careers/getOpening");
+    const response = await axios.get("https://spancareers.vercel.app/careers/getOpening");
     return response.data;
   } catch (error) {
     console.error(error);
